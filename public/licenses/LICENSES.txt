@@ -10,4 +10,3 @@
 
 > jQuery - https://jquery.org/license/ MIT
 
-> 

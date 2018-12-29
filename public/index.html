@@ -4,25 +4,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>3D-PWA-TEMPL8!</title>
-
     <!-- **********************************TEMPLATE-APP**************************************-->
+    <title>3D-PWA-TEMPL8!</title>
     <link rel="manifest" href="./manifest.json">
-
-    <!-- Add to home screen for Safari on iOS -->
-    <!-- <meta name="apple-mobile-web-app-capable" content="yes"> --> <!-- deprecated, fix below -->
+    <!-- Safari on iOS --> <!-- vendor-app-prefixes -->
     <meta name="mobile-web-app-capable" content="yes">
-
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes"> --> <!-- deprecated, fix above -->
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="3DPWA-TEMPL8!">
-    <link rel="apple-touch-icon" href="img/logos/babylonlogo_152x152.png">
+    <link rel="apple-touch-icon" href="img/logos/logo1_152x152.png">
     <!-- Windows -->
-    <meta name="msapplication-TileImage" content="img/logos/babylonlogo_144x144.png">
+    <meta name="msapplication-TileImage" content="img/logos/logo1_144x144.png">
     <meta name="msapplication-TileColor" content="#2F3BA2">
-    <link rel="icon"
-         type="image/png"
-         href="img/logos/babylonlogo_144x144.png">
+    <link rel="icon" type="image/png" href="img/logos/logo1_144x144.png">
     <!-- ***************************************-LIBS-**************************************** -->
     <link rel="stylesheet" type="text/css" href="./lib/materialize/materialize.css">
     <script type="text/javascript" src="./lib/jquery/jquery-3.3.1.js"></script>
@@ -39,7 +33,6 @@
             margin  : 0;
             padding : 0;
         }
-
         #renderCanvas {
             width   : 100%;
             height  : 100%;
@@ -71,16 +64,9 @@
         <a id="mainTitle" href="#" class="brand-logo center">3D-PWA-TEMPL8!</a>
       </div>
     </nav>
-    <!--***********************************************-APP-INSTALL-************************************-->
+    <!--***********************************************-APP-INSTALL-COMPONENT-********************************-->
     <aside>
-      <style>
-        .add-button {
-            position: absolute;
-            top: 72px;
-            right: 2px;
-            border-radius: 10px;
-        }
-      </style>
+      <style>.add-button { position: absolute; top: 72px; right: 2px; border-radius: 10px; } </style>
       <button class="add-button center">Add to home screen</button>
       <script>//App install banners/Add to Home Screen by Pete LaPage.
         let deferredPrompt;
@@ -104,21 +90,16 @@
           });
         });
       </script>
-      <script>//APP-UPDATES:-PUSH-NOTIFICATIONS-.
-      </script>
     </aside>
+    <!--***********************************************-APP-INSTALL-COMPONENT-********************************-->
+    <!--***********************************************-LOGO-COMPONENT-********************************-->
     <aside>
-        <style>.logoStyle{
-            position: absolute;
-            top: 5px;
-            left: 5px;
-            width: 50px;
-        }
-        </style>
-        <img class="logoStyle" src="./img/logos/babylonlogo_144x144.png"/>
+        <style>.logoStyle{ position: absolute; top: 5px; left: 5px; width: 50px; }</style>
+        <img class="logoStyle" src="./img/logos/logo1_144x144.png"/>
     </aside>
-    <!--***********************************************-END-APP-SHELL-************************************-->
-    <!--***********************************************-BABYLON-CONTENT-************************************-->
+    <!--***********************************************-LOGO-COMPONENT-********************************-->
+    <!--*****************************-END-APP-SHELL-************************************-->
+    <!--***********************************************-BABYLON-CONTENT-COMPONENT-************************************-->
     <canvas id="renderCanvas"></canvas>
     <script>
         window.addEventListener('DOMContentLoaded', function(){
@@ -161,7 +142,7 @@
                 light2.intensity = 0.5;
             }
             /*********************************CREATE-CAMERA******************************/
-            var createCamera = function() {
+            var createCamera = function() { //TODO (cam || 'default')
                 //ARC-ROTATE-CAMERA
                 arcRotateCamera = new BABYLON.ArcRotateCamera("GlobalRotativeCamera1",  0, 0, 0, new BABYLON.Vector3(0, 0, 0), scene);
                 arcRotateCamera.setPosition(new BABYLON.Vector3(0, 50, 80));
@@ -177,17 +158,15 @@
                 var assetsManager = new BABYLON.AssetsManager(scene); 
                 //----ASSETS-MANAGER--------------Loading Indicator
                 engine.loadingUIText = "Welcome...";
-
-                // var meshTask = assetsManager.addMeshTask("ladybug1", "", "./3d/assets/", "asset1.babylon");
+                // var meshTask = assetsManager.addMeshTask("asset1", "", "./3d/assets/", "asset1.babylon");
                 // meshTask.onSuccess = function (task) {
                 // }
-
                 assetsManager.onFinish = function(tasks) {
                     engine.runRenderLoop(function() {
                         scene.render();
                     });
                 };
-                assetsManager.load();  // IMPORTANT.
+                assetsManager.load();  // IMPORTANT-.
             }
             /***************************************-MESH-*********************************/
             var zoneboxes = [];

@@ -1,23 +1,20 @@
 (function() {
   'use strict';
 
+  //STATE-PRESISTENCE-MACHINE-.
   window.onload = function() {
-  //   let message = localStorage.getItem("message") || 'Your message will display here';
-  //   $('#message').html(message);
-  //   $('#display').html(message);
+    let appName = "3d-pwa-templ8"
+    localStorage.setItem("appData", {appName:appName});
+    localStorage.setItem("gameData", {games:[{}]});
   }
-
-  $('#button').click(() => {
-  //   console.log('click')
-  //   let message = $('#message').val();
-  //   console.log(message);
-  //   $('#display').html(message);
-  //   localStorage.setItem("message", message);
+  $('button').click(() => {
+    let appData = localStorage.getItem("appData") || {};
+    let gameData = localStorage.getItem("gameData") || {};
   });
 
+  //Standard-ServiceWorker-Registration-.
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-             .register('./sw.js')
-             .then(function() { console.log('[App] Service Worker Registered'); });
+    navigator.serviceWorker.register('./sw.js')
+    .then(function() { console.log('[App] Service Worker Registered'); });
   }
 })();

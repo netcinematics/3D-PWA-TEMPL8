@@ -4,9 +4,9 @@ PWA Template with BabylonJS
 
 Powered by
 
-<img src="curio/babylonlogo1.png" width="200" border="3" style="border-radius: 10px;">
+<img src="curio/logo1.png" width="200" border="3" style="border-radius: 10px;">
 
-Progressive Web Apps are a new wild west for creative HTML5 devs. 
+Progressive Web Apps are the next wild west for creative HTML5 devs and the world wide web. 
 
 Now with BabylonJS, PWA brings your 3D creations to the "Home Screen" with no app store necessary.
 
