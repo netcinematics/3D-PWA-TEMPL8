@@ -8,7 +8,7 @@ Powered by
 
 Progressive Web Apps are a new wild west for creative HTML5 devs. 
 
-Now, with BabylonJS, PWA brings your 3D creations to the "Home Screen" with no app store necessary.
+Now with BabylonJS, PWA brings your 3D creations to the "Home Screen" with no app store necessary.
 
 Use this template to begin building and distributing your 3D PWA Apps. 
 
