@@ -1,2 +1,2 @@
-# 3DPWA-TEMPL8
+# 3D-PWA-TEMPL8
 PWA Template with BabylonJS
