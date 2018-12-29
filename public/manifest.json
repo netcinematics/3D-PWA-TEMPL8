@@ -1,0 +1,31 @@
+{
+  "name": "3D-PWA-TEMPL8",
+  "short_name": "3D-PWA-TEMPL8",
+  "icons": [{
+    "src": "img/logos/babylonlogo_128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }, {
+      "src": "img/logos/babylonlogo_144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }, {
+      "src": "img/logos/babylonlogo_152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    }, {
+      "src": "img/logos/babylonlogo_192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }, {
+      "src": "img/logos/babylonlogo_256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }],
+  "scope": "/",
+  "start_url": "/index.html?source=pwa",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#000",
+  "theme_color": "#ccc"
+}

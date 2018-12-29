@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>3D-PWA-TEMPL8!</title>
+
+    <!-- **********************************TEMPLATE-APP**************************************-->
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- Add to home screen for Safari on iOS -->
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes"> --> <!-- deprecated, fix below -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="3DPWA-TEMPL8!">
+    <link rel="apple-touch-icon" href="img/logos/babylonlogo_152x152.png">
+    <!-- Windows -->
+    <meta name="msapplication-TileImage" content="img/logos/babylonlogo_144x144.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+    <link rel="icon"
+         type="image/png"
+         href="img/logos/babylonlogo_144x144.png">
+    <!-- ***************************************-LIBS-**************************************** -->
+    <link rel="stylesheet" type="text/css" href="./lib/materialize/materialize.css">
+    <script type="text/javascript" src="./lib/jquery/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="./lib/babylon/hand.min-1.2.js"></script>
+    <script type="text/javascript" src="./lib/babylon/babylon.3.0.0-alpha.max.js"></script> 
+    <script type="text/javascript" src="./lib/babylon/materials/babylon.gridMaterial.min.js"></script> 
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/babylonjs/3.0.0-alpha/babylon.max.js"></script> -->
+    <!-- <script src="https://raw.githubusercontent.com/BabylonJS/Babylon.js/master/dist/materialsLibrary/babylon.gridMaterial.js"></script>  -->
+    <style>
+        html, body {
+            overflow: hidden;
+            width   : 100%;
+            height  : 100%;
+            margin  : 0;
+            padding : 0;
+        }
+
+        #renderCanvas {
+            width   : 100%;
+            height  : 100%;
+            touch-action: none;
+        }
+    </style>
+    <style> /*----------------------------------------------------------Mobile-FIRST-RWD--*/
+        @media only screen and (min-width: 350px) { /*mobile styles*/
+           #mainTitle {
+               font-size:1.2rem;
+           }
+        }
+        @media only screen and (min-width: 650px) { /*tablet styles*/
+           #mainTitle {
+               font-size:1.8rem;
+           }
+        }
+        @media only screen and (min-width: 800px) { /*desktop styles*/
+           #mainTitle {
+               font-size:2.1rem;
+           }
+        }
+    </style>
+  </head>
+  <body>
+    <!--***********************************************-APP-SHELL-************************************-->
+    <nav>
+      <div class="nav-wrapper blue darken-4">
+        <a id="mainTitle" href="#" class="brand-logo center">3D-PWA-TEMPL8!</a>
+      </div>
+    </nav>
+    <!--***********************************************-APP-INSTALL-************************************-->
+    <aside>
+      <style>
+        .add-button {
+            position: absolute;
+            top: 72px;
+            right: 2px;
+            border-radius: 10px;
+        }
+      </style>
+      <button class="add-button center">Add to home screen</button>
+      <script>//App install banners/Add to Home Screen by Pete LaPage.
+        let deferredPrompt;
+        const addBtn = document.querySelector('.add-button');
+        addBtn.style.display = 'none'; //hide-initially-.
+        window.addEventListener('beforeinstallprompt', (e) => {
+          e.preventDefault(); // Prevent Chrome 67 and earlier from automatically showing the prompt
+          deferredPrompt = e; // Stash the event so it can be triggered later.
+          addBtn.style.display = 'block';  // Update UI to notify the user they can add to home screen
+          addBtn.addEventListener('click', (e) => {
+            addBtn.style.display = 'none';// hide our user interface that shows our A2HS button
+            deferredPrompt.prompt(); // Show the prompt
+            deferredPrompt.userChoice.then((choiceResult) => { // Wait for the user to respond to the prompt
+                if (choiceResult.outcome === 'accepted') {
+                  console.log('User accepted the A2HS prompt');
+                } else {
+                  console.log('User dismissed the A2HS prompt');
+                }
+                deferredPrompt = null;
+              });
+          });
+        });
+      </script>
+      <script>//APP-UPDATES:-PUSH-NOTIFICATIONS-.
+      </script>
+    </aside>
+    <aside>
+        <style>.logoStyle{
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 50px;
+        }
+        </style>
+        <img class="logoStyle" src="./img/logos/babylonlogo_144x144.png"/>
+    </aside>
+    <!--***********************************************-END-APP-SHELL-************************************-->
+    <!--***********************************************-BABYLON-CONTENT-************************************-->
+    <canvas id="renderCanvas"></canvas>
+    <script>
+        window.addEventListener('DOMContentLoaded', function(){
+            var canvas = document.getElementById('renderCanvas');
+            var engine = new BABYLON.Engine(canvas, true);
+            var scene;
+            var arcRotateCamera;
+            /*********************************CREATE-GROUND******************************/
+            var ground;
+            var createGround = function() {
+                var ground = BABYLON.Mesh.CreateGround("ground1", 100, 100, 2, scene);  //GRID
+                var gridMaterial = new BABYLON.GridMaterial("", scene);
+                gridMaterial.mainColor = new BABYLON.Color3(187/255, 187/255, 204/255); 
+                gridMaterial.lineColor = new BABYLON.Color3(86/255, 110/255, 173/255); //steelblue
+                ground.material = gridMaterial;
+            }
+            /******************************CREATE-SKY*******************************/
+            var createSky = function () {
+                var skybox = BABYLON.Mesh.CreateBox("skybox", 1800, scene); //skybox
+                var skyboxMaterial = new BABYLON.StandardMaterial("skybox", scene);
+                skyboxMaterial.backFaceCulling = false;
+                skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("./3d/skybox/skybox", scene);
+                skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
+                skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
+                skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
+                skyboxMaterial.disableLighting = true;
+                skybox.material = skyboxMaterial;
+                skybox.isPickable = false;
+                skybox.rotation.x = -0.75; //1.15 sun
+            }
+            /*********************************CREATE-LIGHTS******************************/
+            var spot1, light1, light2;
+            var createLights = function() {
+                var light = new BABYLON.HemisphericLight('light1', new BABYLON.Vector3(0,10,0), scene);
+                light.intensity = 0.4;
+                light1 = new BABYLON.DirectionalLight("dir01", new BABYLON.Vector3(-1, -2, -1), scene);
+                light1.position = new BABYLON.Vector3(20, 39, 20);
+                light1.intensity = 0.5;
+                light2 = new BABYLON.SpotLight("spot02", new BABYLON.Vector3(0, 40, 20), new BABYLON.Vector3(-1, -2, -1), 1.1, 16, scene);
+                light2.intensity = 0.5;
+            }
+            /*********************************CREATE-CAMERA******************************/
+            var createCamera = function() {
+                //ARC-ROTATE-CAMERA
+                arcRotateCamera = new BABYLON.ArcRotateCamera("GlobalRotativeCamera1",  0, 0, 0, new BABYLON.Vector3(0, 0, 0), scene);
+                arcRotateCamera.setPosition(new BABYLON.Vector3(0, 50, 80));
+                arcRotateCamera.setTarget(BABYLON.Vector3.Zero());
+                arcRotateCamera.attachControl(canvas, true);
+                //FREE-ROAM-CAMERA
+                // var camera = new BABYLON.FreeCamera('camera1', new BABYLON.Vector3(0, 90,-90), scene);
+                // camera.setTarget(BABYLON.Vector3.Zero());
+                // camera.attachControl(canvas, true);
+            }
+            /*********************************CREATE-ASSETS******************************/
+            var createAssets = function() {
+                var assetsManager = new BABYLON.AssetsManager(scene); 
+                //----ASSETS-MANAGER--------------Loading Indicator
+                engine.loadingUIText = "Welcome...";
+
+                // var meshTask = assetsManager.addMeshTask("ladybug1", "", "./3d/assets/", "asset1.babylon");
+                // meshTask.onSuccess = function (task) {
+                // }
+
+                assetsManager.onFinish = function(tasks) {
+                    engine.runRenderLoop(function() {
+                        scene.render();
+                    });
+                };
+                assetsManager.load();  // IMPORTANT.
+            }
+            /***************************************-MESH-*********************************/
+            var zoneboxes = [];
+            var createBoxes = function(){
+                // ZONE BOXES
+                zoneboxes[0] = BABYLON.MeshBuilder.CreateBox("box", {height: 3, width: 20, depth: 20}, scene);
+                zoneboxes[0].position = new BABYLON.Vector3(15, 1, -15);
+                zoneboxes[0].visibility = 0.6;
+                zoneboxes[0].material = new BABYLON.StandardMaterial("red", scene);
+                zoneboxes[0].material.diffuseColor = new BABYLON.Color3(0, 0, 0);
+                zoneboxes[0].material.specularColor = new BABYLON.Color3(0, 0, 0);
+                zoneboxes[0].material.emissiveColor = new BABYLON.Color3(1, 0, 0);
+
+                zoneboxes[1] = BABYLON.MeshBuilder.CreateBox("box2", {height: 3, width: 20, depth: 20}, scene);
+                zoneboxes[1].position = new BABYLON.Vector3(15, 0, 15);
+                zoneboxes[1].visibility = 0.6;
+                zoneboxes[1].material = new BABYLON.StandardMaterial("green", scene);
+                zoneboxes[1].material.diffuseColor = new BABYLON.Color3(0, 0, 0);
+                zoneboxes[1].material.specularColor = new BABYLON.Color3(0, 0, 0);
+                zoneboxes[1].material.emissiveColor = new BABYLON.Color3(0, 1, 0);
+
+                zoneboxes[2] = BABYLON.MeshBuilder.CreateBox("box3", {height: 3, width: 20, depth: 20}, scene);
+                zoneboxes[2].visibility = 0.6;
+                zoneboxes[2].position = new BABYLON.Vector3(-15, 0, -15);
+                zoneboxes[2].material = new BABYLON.StandardMaterial("blue", scene);
+                zoneboxes[2].material.diffuseColor = new BABYLON.Color3(0, 0, 0);
+                zoneboxes[2].material.specularColor = new BABYLON.Color3(0, 0, 0);
+                zoneboxes[2].material.emissiveColor = new BABYLON.Color3(0, 0, 1);
+
+                zoneboxes[3] = BABYLON.MeshBuilder.CreateBox("box4", {height: 3, width: 20, depth: 20}, scene);
+                zoneboxes[3].visibility = 0.6;
+                zoneboxes[3].position = new BABYLON.Vector3(-15, 0, 15);
+                zoneboxes[3].material = new BABYLON.StandardMaterial("purple", scene);
+                zoneboxes[3].material.diffuseColor = new BABYLON.Color3(0, 0, 0);
+                zoneboxes[3].material.specularColor = new BABYLON.Color3(0, 0, 0);
+                zoneboxes[3].material.emissiveColor = new BABYLON.Color3(0.5, 0, 0.5);
+            }
+            var centroid;
+            var createCentroid = function (){
+                var material = new BABYLON.StandardMaterial("k", scene);
+                var centroid = BABYLON.Mesh.CreateSphere("centroid", 16, 3, scene);
+                centroid.position = new BABYLON.Vector3(0,10,0);
+                material.diffuseColor = new BABYLON.Color3(1, 1, 1);
+                centroid.material = material;
+            }
+            /*********************************CREATE-SCENE******************************/
+            var createScene = function(){
+                scene = new BABYLON.Scene(engine);
+                createGround();
+                createSky();
+                createLights();
+                createCamera();
+                // createAssets();
+                createBoxes();
+                createCentroid();
+                return scene;
+            }
+            /******************************Initialization******************************/
+            scene = createScene();
+            // scene.clearColor = new BABYLON.Color3(.33,.44,.55);
+            engine.runRenderLoop(function(){
+                scene.render();
+            });
+            window.addEventListener('resize', function(){
+                engine.resize();
+            });
+        });
+    </script>
+
+    <script type="text/javascript" src="./app.js"></script>
+
+  </body>
+    <!--GoogleAnalytics-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-91079342-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <!--GoogleAnalytics-->
+</html>

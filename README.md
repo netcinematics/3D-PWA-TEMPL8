@@ -1,13 +1,13 @@
 # 3D-PWA-TEMPL8
 PWA Template with BabylonJS
 
-    # A Progressive Web App Template
+# A Progressive Web App Template
 
 Powered by
 
 <img src="curio/babylonlogo1.png" width="200" border="3" style="border-radius: 10px;">
 
-For creative HTML5 devs Progressive App technology (PWA) means the end of an ice-age. Now with BabylonJS, Progressive Apps bring your 3D creations to the "Home Screen" with no app store necessry.
+Progressive Web Apps are a new wild west for creative HTML5 devs. Now with BabylonJS, PWA can bring your 3D creations to the "Home Screen" with no app store necessary.
 
 Use this template to begin building and distributing your 3D PWA Apps. 
 

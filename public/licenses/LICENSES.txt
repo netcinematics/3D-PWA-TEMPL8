@@ -1,0 +1,13 @@
+## License Manifest of 3D mesh, and other assets. ----------------------------
+
+> BabylonJS, skybox, grid -  Apache License 2.0, included.
+
+> PWA TEMPLATE - Google - your-first-pwapp-master - http://www.apache.org/licenses/LICENSE-2.0
+
+> PWA Tutorial - https://github.com/ryanwhocodes/template-progressive-web-app/blob/master/MIT-LICENSE
+
+> Materialize - https://github.com/Dogfalo/materialize/blob/v1-dev/LICENSE MIT
+
+> jQuery - https://jquery.org/license/ MIT
+
+> 
