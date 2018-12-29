@@ -1,22 +1,20 @@
 # 3D-PWA-TEMPL8
 PWA Template with BabylonJS
 
-[![3D Web Apps](curio/curio1.png)]
+    # A Progressive Web App Template
 
-# A Progressive Web App Template
+Powered by
 
-Powered by BabylonJS
+<img src="curio/babylonlogo1.png" width="200" border="3" style="border-radius: 10px;">
 
-<img src="curio/babylonlogo1.png" width="100" border="3" style="border-radius: 10px;">
-
-For creative HTML5 devs, PWA means the end of an ice-age. Now with BabylonJS, Progressive Apps bring your 3D creations to the "Home Screen", with no app store necessry.
+For creative HTML5 devs Progressive App technology (PWA) means the end of an ice-age. Now with BabylonJS, Progressive Apps bring your 3D creations to the "Home Screen" with no app store necessry.
 
 Use this template to begin building and distributing your 3D PWA Apps. 
 
 
 ## WARNING
 
-Check W3C compatiility tables before going to production with PWA technology. It is subject to change, and while a progressive enhancement, not all browsers support everything, look for Manifest support as a good example.
+Check W3C compatiility tables before going to production. PWA technology is subject to change. Look for Manifest support as a good example of maturation.
 
 
 ## Create your 3D Web App
@@ -29,7 +27,7 @@ Clone this repo (or just copy the bits you need). The main files to edit are:
 - [images/icons](images/icons) Create square icons of the number of pixels for each size and save them here
 - [public/service-worker.js](public/service-worker.js) Update this with the list of files you want to cache locally
 
-<img src="curio/curio2.png" width="200" border="3" style="border-radius: 10px;">
+<img src="curio/curio2.png" width="350" border="3" style="border-radius: 10px;">
 
 ## Using the app
 
@@ -49,28 +47,28 @@ Service Workers appear to be widely supported across browsers, but be sure to ch
 - Install a service worker for your browser, if you haven't already (eg [Web Server for Chrome](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/#install_and_verify_web_server))
 - Browsers may also ask if you want to include the app on your homescreen
 
-## What's included
+## Structure
 
 ```
 ├── README.md
-├── firebase.json
+├── MIT-LICENSE
+├── App_Curation
 └── public
-    ├── fonts
-    │   └── roboto
-    │       └── ...
-    ├── images
-    │   └── icons
-    │       └── ...
+    ├── 3d
+    │   └── assets
+    │   └── ...
+    ├── img
+    │   └── logos
+    │   └── ...
+    ├── lib
+    │   └── babylon
+    │   └── materialize
+    │   └── jquery
+    │   └── ...
+    ├── app.js
     ├── index.html
     ├── manifest.json
-    ├── scripts
-    │   ├── app.js
-    │   ├── jquery-3.3.1.js
-    │   └── materialize.js
-    ├── service-worker.js
-    └── styles
-        ├── materialize.css
-        └── style.css
+    └── sw.js
 ```
 
 - [JQuery](https://jquery.com/) A library for supporting quick and easy javascipt in your website
@@ -81,9 +79,9 @@ Service Workers appear to be widely supported across browsers, but be sure to ch
 ## Examples
 
 Here are examples hosted on heroku:
-- [ryanwhocodes/qr-code-pwa](https://github.com/ryanwhocodes/qr-code-pwa)
-- [qr-code-pwa.firebaseapp.com/](https://qr-code-pwa.firebaseapp.com/)
 
 ## Resources
 
 - [Your First Progressive Web App - Google Developers](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/)
+- [ryanwhocodes/qr-code-pwa](https://github.com/ryanwhocodes/qr-code-pwa)
+- [qr-code-pwa.firebaseapp.com/](https://qr-code-pwa.firebaseapp.com/)
