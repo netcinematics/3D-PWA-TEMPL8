@@ -7,7 +7,7 @@ PWA Template with BabylonJS
 
 Powered by BabylonJS
 
-<img src="curio/babylonlogo1.png" width="200" border="3" style="border-radius: 10px;">
+<img src="curio/babylonlogo1.png" width="100" border="3" style="border-radius: 10px;">
 
 For creative HTML5 devs, PWA means the end of an ice-age. Now with BabylonJS, Progressive Apps bring your 3D creations to the "Home Screen", with no app store necessry.
 
@@ -29,7 +29,7 @@ Clone this repo (or just copy the bits you need). The main files to edit are:
 - [images/icons](images/icons) Create square icons of the number of pixels for each size and save them here
 - [public/service-worker.js](public/service-worker.js) Update this with the list of files you want to cache locally
 
-<img src="curio/curio1.png" width="200" border="3" style="border-radius: 10px;">
+<img src="curio/curio2.png" width="200" border="3" style="border-radius: 10px;">
 
 ## Using the app
 
