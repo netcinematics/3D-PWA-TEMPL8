@@ -1,4 +1,4 @@
-# 3DPWA-TEMPL8
+# 3D-PWA-TEMPL8
 PWA Template with BabylonJS
 
 [![3D Web Apps](curio/curio1.png)]
