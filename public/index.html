@@ -142,25 +142,30 @@
                 light2.intensity = 0.5;
             }
             /*********************************CREATE-CAMERA******************************/
-            var createCamera = function() { //TODO (cam || 'default')
-                //ARC-ROTATE-CAMERA
-                arcRotateCamera = new BABYLON.ArcRotateCamera("GlobalRotativeCamera1",  0, 0, 0, new BABYLON.Vector3(0, 0, 0), scene);
-                arcRotateCamera.setPosition(new BABYLON.Vector3(0, 50, 80));
-                arcRotateCamera.setTarget(BABYLON.Vector3.Zero());
-                arcRotateCamera.attachControl(canvas, true);
-                //FREE-ROAM-CAMERA
-                // var camera = new BABYLON.FreeCamera('camera1', new BABYLON.Vector3(0, 90,-90), scene);
-                // camera.setTarget(BABYLON.Vector3.Zero());
-                // camera.attachControl(canvas, true);
+            var createCamera = function(cam) {
+                cam = cam || 'default'; 
+                if(cam==='default'){ //ARC-ROTATE-CAMERA
+                    arcRotateCamera = new BABYLON.ArcRotateCamera("GlobalRotativeCamera1",  0, 0, 0, new BABYLON.Vector3(0, 0, 0), scene);
+                    arcRotateCamera.setPosition(new BABYLON.Vector3(0, 50, 80));
+                    arcRotateCamera.setTarget(BABYLON.Vector3.Zero());
+                    arcRotateCamera.attachControl(canvas, true);
+                } else if(cam==='free'){ //FREE-ROAM-CAMERA
+                    var camera = new BABYLON.FreeCamera('camera1', new BABYLON.Vector3(0, 90,-90), scene);
+                    camera.setTarget(BABYLON.Vector3.Zero());
+                    camera.attachControl(canvas, true);
+                }
             }
             /*********************************CREATE-ASSETS******************************/
             var createAssets = function() {
                 var assetsManager = new BABYLON.AssetsManager(scene); 
                 //----ASSETS-MANAGER--------------Loading Indicator
                 engine.loadingUIText = "Welcome...";
-                // var meshTask = assetsManager.addMeshTask("asset1", "", "./3d/assets/", "asset1.babylon");
-                // meshTask.onSuccess = function (task) {
-                // }
+                assetsManager.addMeshTask("asset2", "", "./3d/assets/", "skull.babylon").onSuccess = function (task){
+                    task.loadedMeshes.forEach(function(e,i){
+                            task.loadedMeshes[0].position = new BABYLON.Vector3(0,30,100);
+                    });
+                };
+                assetsManager.addMeshTask("asset3", "", "./3d/assets/", "worldbox2.babylon").onSuccess = function (task){};
                 assetsManager.onFinish = function(tasks) {
                     engine.runRenderLoop(function() {
                         scene.render();
@@ -215,11 +220,11 @@
             /*********************************CREATE-SCENE******************************/
             var createScene = function(){
                 scene = new BABYLON.Scene(engine);
-                createGround();
                 createSky();
+                createGround();
                 createLights();
                 createCamera();
-                // createAssets();
+                createAssets();
                 createBoxes();
                 createCentroid();
                 return scene;

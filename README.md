@@ -1,52 +1,68 @@
 # 3D-PWA-TEMPL8
 PWA Template with BabylonJS
-# A Progressive Web App Template
+# A 3D Progressive Web App Template
 
-Powered by
+Powered by:
 
-<img src="curio/logo1.png" width="200" border="3" style="border-radius: 10px;">
+[<img src="curio/logo1.png" width="200" border="3" style="border-radius: 10px;">](https://www.babylonjs.com/)
 
-Progressive Web Apps are the next wild west for creative HTML5 devs and the world wide web. 
+PWAs are the next wild west for creative HTML5 devs - and the world wide web. 
 
-Now with BabylonJS, PWA brings your 3D creations to the "Home Screen" with no app store necessary.
+Now with BabylonJS, bring your 3D creations to the "Home Screen" with no app store necessary.
 
-Use this template to begin building and distributing your 3D PWA Apps. 
+Use this template to begin building and distributing your 3D PWAs. 
 
 
 ## WARNING
 
-Check W3C compatibility tables before going to production. PWA technology is subject to change. Look for Manifest support as a good example of maturation.
+Check W3C compatibility tables before going to production. PWA technology is subject to change. Look for [Manifest support as a good example of technical maturation](https://developer.mozilla.org/en-US/docs/Web/Manifest#Browser_compatibility). Zing!
 
 
-## Create your 3D Web App
+## Create your own 3D Web App (why not?)
 
-Clone this repo (or just copy the bits you need). The main files to edit are:  
-
-- [public/index.html](public/index.html) The main page for your app
-- [public/style/style.css)](public/style/style.css) Add your own styling to this file
-- [public/scripts/app.js](public/scripts/app.js) This contains the javascript to handle the logic in your app. It currently uses localStorage for storing data when the use clicks the button, it is recommended to use another database in production, such as indexedDb (Read more [here](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/#intercept_the_network_request_and_cache_the_response))
-- [images/icons](images/icons) Create square icons of the number of pixels for each size and save them here
-- [public/service-worker.js](public/service-worker.js) Update this with the list of files you want to cache locally
+Clone me - I'm free. Follow these steps:  
 
 <img src="curio/curio2.png" width="350" border="3" style="border-radius: 10px;">
 
-## Using the app
+- [Use BabylonJS to add your own snazz](https://doc.babylonjs.com/).
 
-It even caches the skybox!
+<img src="curio/curio5.png" width="350" border="3" style="border-radius: 10px;">
+
+
+## Use the app
+
+It caches the skybox, 3D assets, and audio!?!
+
+Check out those cached files in the DevTools console.
+
+Add to homescreen, splashscreen, and push updates.
+
+PWAs are trans-dimentional. No way!
 
 
 ## App Shell
 
-PWA has a design pattern called "App Shell", that is really clever. App Shell, is just a separation of content code from app code... for the purpose of caching each separately. So this template is primarily App Shell, with the canvas being one example of dynamic content.
+PWAs have a DESIGN PATTERN called "App Shell". Get with it, it's really clever. App Shell is just a separation of content code from app code... for the purpose of caching. Why? So you can download lots of content - and never reload the shell! Dig? Use this template as your App Shell! The canvas is one example of dynamic content, but later we will look for LocalStorage to become episodic content in beautiful JSON form.
 
 
 ## Service Workers
 
-Service Workers appear to be widely supported across browsers, but be sure to check the compatibility table. 
+Service Workers are widely supported across browsers, apparently, but be sure to check that [compatibility table](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker#Browser_compatibility) before running amok on safari. 
 
-- Open `index.html` within the public folder
-- Install a service worker for your browser, if you haven't already (eg [Web Server for Chrome](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/#install_and_verify_web_server))
-- Browsers may also ask if you want to include the app on your homescreen
+"This is an experimental technology" <- gotta love it!
+NOTE: there is a small learning curve for looking carefully under the Devtools > Application tab and also > Network.
+
+
+## Web Server for Chrome
+
+If you haven't already - you really need to get with the [Web Server for Chrome](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/#install_and_verify_web_server)). It is the future.
+
+
+## Add to Homescreen
+
+This is the cool new ability provided by the simple "JSON Manifest". Thank you [W3C](https://www.w3.org/TR/appmanifest/). 
+NOTE: there is a small learning curve for a few topics like: how do I uninstall? And how do I set up a button to "Add to Homescreen"? All answers revealed in the code (if you can find it), and thankfully - all many doors revealed [here](https://developer.mozilla.org/en-US/docs/Web/Apps/Progressive/Installable_PWAs)
+
 
 ## Structure
 
@@ -72,14 +88,18 @@ Service Workers appear to be widely supported across browsers, but be sure to ch
     └── sw.js
 ```
 
-- [JQuery](https://jquery.com/) A library for supporting quick and easy javascipt in your website
-- For styling, this has materialize.js and css from [materializecss.com](http://materializecss.com/). Remove or replace it if you prefer something different.
-- [public/service-worker.js](public/service-worker.js) Currently this will cache the app's files for quick local access. Read more about Service Workers [here](https://developers.google.com/web/fundamentals/primers/service-workers/).
-- [public/manifest.json](public/manifest.json) A JSON file specifies how your app appears to the user in the areas that they would expect to see apps (for example the mobile home screen), direct what the user can launch and more importantly how they can launch it. Read more about this [here](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/#support_native_integration).
+
+## Libs
+
+- [BabylonJS](https://www.babylonjs.com/) Not your grandpa's 3D Web rendering library.
+- [JQuery](https://jquery.com/) hybrid 3D and 2D is not only healthy - it is good for you too!
+- [Materialize](http://materializecss.com/). CSS boilerplate.
+
 
 ## Examples
 
-Here are examples hosted on heroku:
+Hosted on anymscape.com with heroku:
+
 
 ## Resources
 
