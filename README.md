@@ -20,7 +20,7 @@ Check W3C compatibility tables before going to production. PWA technology is sub
 
 ## Create your own 3D Web App (why not?)
 
-Clone me - I'm free. Follow these steps:  
+Clone me - I'm free.  
 
 <img src="curio/curio2.png" width="350" border="3" style="border-radius: 10px;">
 
@@ -37,7 +37,7 @@ Check out those cached files in the DevTools console.
 
 Add to homescreen, splashscreen, and push updates.
 
-PWAs are trans-dimentional. No way!
+PWAs are trans-dimensional. No way!
 
 
 ## App Shell
@@ -106,3 +106,4 @@ Hosted on anymscape.com with heroku:
 - [Your First Progressive Web App - Google Developers](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/)
 - [ryanwhocodes/qr-code-pwa](https://github.com/ryanwhocodes/qr-code-pwa)
 - [qr-code-pwa.firebaseapp.com/](https://qr-code-pwa.firebaseapp.com/)
+- [PWA Examples - js13kpwa](https://github.com/mdn/pwa-examples)

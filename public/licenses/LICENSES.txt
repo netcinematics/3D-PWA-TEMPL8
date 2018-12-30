@@ -6,6 +6,8 @@
 
 > PWA Tutorial - https://github.com/ryanwhocodes/template-progressive-web-app/blob/master/MIT-LICENSE
 
+> PWA Examples - https://github.com/mdn/pwa-examples/blob/master/LICENSE
+
 > Materialize - https://github.com/Dogfalo/materialize/blob/v1-dev/LICENSE MIT
 
 > jQuery - https://jquery.org/license/ MIT
