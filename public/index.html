@@ -58,13 +58,19 @@
     </style>
   </head>
   <body>
+    <script>
+        /*****************-NET-CINEMATICS-*******************/
+        let nx = {};
+        nx.sonic={};
+        nx.sonic.toggle=1; //0off 1on
+    </script>
     <!--***********************************************-APP-SHELL-************************************-->
     <nav>
       <div class="nav-wrapper blue darken-4">
         <a id="mainTitle" href="#" class="brand-logo center">3D-PWA-TEMPL8!</a>
       </div>
     </nav>
-    <!--***********************************************-APP-INSTALL-COMPONENT-********************************-->
+    <!--********************************-APP-INSTALL-COMPONENT-********************************-->
     <aside>
       <style>.add-button { position: absolute; top: 72px; right: 2px; border-radius: 10px; } </style>
       <button class="add-button center">Add to home screen</button>
@@ -81,9 +87,9 @@
             deferredPrompt.prompt(); // Show the prompt
             deferredPrompt.userChoice.then((choiceResult) => { // Wait for the user to respond to the prompt
                 if (choiceResult.outcome === 'accepted') {
-                  console.log('User accepted the A2HS prompt');
+                  console.log('User accepts A2HS.');
                 } else {
-                  console.log('User dismissed the A2HS prompt');
+                  console.log('User dismissed A2HS.');
                 }
                 deferredPrompt = null;
               });
@@ -91,11 +97,30 @@
         });
       </script>
     </aside>
-    <!--***********************************************-APP-INSTALL-COMPONENT-********************************-->
-    <!--***********************************************-LOGO-COMPONENT-********************************-->
+    <!--***************************-APP-INSTALL-COMPONENT-********************************-->
+    <!--*********************************-LOGO-COMPONENT-********************************-->
     <aside>
         <style>.logoStyle{ position: absolute; top: 5px; left: 5px; width: 50px; }</style>
         <img class="logoStyle" src="./img/logos/logo1_144x144.png"/>
+    </aside>
+    <!--************************************************AUDIO-COMPONENT*******************************-->
+    <aside>
+        <style>.sonicBtn { position: absolute; top: 72px; left: 2px; border-radius: 10px; } </style>
+        <button class="sonicBtn center">sound off</button>
+        <script>
+            $(".sonicBtn").on({ //todo named function here call nx.ui.routeRemix
+                click: function (e) {
+                    if(nx.sonic.toggle){
+                        nx.sonic.soundObjTrack1.play();
+                        $('.sonicBtn').html('sound on')
+                    } else {
+                        nx.sonic.soundObjTrack1.stop();
+                        $('.sonicBtn').html('sound off')
+                    }
+                    nx.sonic.toggle = !nx.sonic.toggle;
+                }
+            });
+        </script>
     </aside>
     <!--***********************************************-LOGO-COMPONENT-********************************-->
     <!--*****************************-END-APP-SHELL-************************************-->
@@ -158,11 +183,10 @@
             /*********************************CREATE-ASSETS******************************/
             var createAssets = function() {
                 var assetsManager = new BABYLON.AssetsManager(scene); 
-                //----ASSETS-MANAGER--------------Loading Indicator
-                engine.loadingUIText = "Welcome...";
+                engine.loadingUIText = "Welcome..."; //----ASSETS-MANAGER--------------Loading Indicator
                 assetsManager.addMeshTask("asset2", "", "./3d/assets/", "skull.babylon").onSuccess = function (task){
                     task.loadedMeshes.forEach(function(e,i){
-                            task.loadedMeshes[0].position = new BABYLON.Vector3(0,30,100);
+                            task.loadedMeshes[0].position = new BABYLON.Vector3(0,30,150);
                     });
                 };
                 assetsManager.addMeshTask("asset3", "", "./3d/assets/", "worldbox2.babylon").onSuccess = function (task){};
@@ -173,7 +197,16 @@
                 };
                 assetsManager.load();  // IMPORTANT-.
             }
-            /***************************************-MESH-*********************************/
+            /*********************************CREATE-AUDIO******************************/
+            var createSounds = function(){ //
+                nx.sonic.soundObjTrack1=new BABYLON.Sound("bg1","./sonic/nxBoomCore2cc0.mp3",scene,null,
+                    {loop:false,autoplay:nx.sonic.toggle, volume:0.04});
+                setTimeout(function(){ //AUDIO-LOADING-OPTIMIZATION-.
+                    nx.sonic.soundObjBlip2= new BABYLON.Sound("blipIn1","./sonic/nxBlip2b.mp3", scene, null, { loop: false, autoplay: true });
+                },3000)
+                BABYLON.Engine.audioEngine.setGlobalVolume(0.8); //0.02 is on the quiet side.
+            }
+            /***************************************-3D-MESH-*********************************/
             var zoneboxes = [];
             var createBoxes = function(){
                 // ZONE BOXES
@@ -225,6 +258,7 @@
                 createLights();
                 createCamera();
                 createAssets();
+                createSounds();
                 createBoxes();
                 createCentroid();
                 return scene;

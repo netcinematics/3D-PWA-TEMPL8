@@ -105,5 +105,5 @@ Hosted on anymscape.com with heroku:
 
 - [Your First Progressive Web App - Google Developers](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/)
 - [ryanwhocodes/qr-code-pwa](https://github.com/ryanwhocodes/qr-code-pwa)
-- [qr-code-pwa.firebaseapp.com/](https://qr-code-pwa.firebaseapp.com/)
+- [PWA Add to Homescreen](https://developers.google.com/web/fundamentals/app-install-banners/#test)
 - [PWA Examples - js13kpwa](https://github.com/mdn/pwa-examples)

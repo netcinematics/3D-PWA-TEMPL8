@@ -1,4 +1,4 @@
-## License Manifest of 3D mesh, and other assets. ----------------------------
+## License Manifest of 3D mesh, Audio, and other assets. ----------------------------
 
 > BabylonJS, skybox, grid -  Apache License 2.0, included.
 
@@ -12,3 +12,15 @@
 
 > jQuery - https://jquery.org/license/ MIT
 
+//AUDIO------------------------------------------------------------------------------------
+NXLicense - "nxBlip2b", "nxBass1", "nxTally", "nxSonar1d", "nxWoop1", "nxWoop3", "nxBoop", "nxLvlUp", "nxWin"
+ - created in LMMS and Audacity. Jack Falcon, NetCinematics. 
+CC0 - "huge explosion » Huge Explosion Part 2 - Impact"  https://freesound.org/people/benjaminharveydesign/sounds/366088/
+CC0 - "RussianMeteorite_SFX.flac" https://freesound.org/people/jongrubbs/sounds/178182/
+CC0 - "2015_2016 » LAURENT_Tiphany_2015_2016_explosion.wav" https://freesound.org/people/univ_lyon3/sounds/324384/
+CC0 - "Distant Boom.wav" https://freesound.org/people/Henrythetrain/sounds/142598/
+"SonicBoomTrack" derivative by Jack Falcon, NetCinematics.
+
+//3D-Mesh-------------------------------------------------------------------------------
+"worldbox.babylon" - created by Jack Falcon, NetCinematics, with Blender. MIT
+"skull.babylon" - Apache License 2.0, included.
