@@ -141,12 +141,32 @@ The BabylonJS Asset Manager loading experience is excellent. Thanks BabylonJS HT
 
 
 
+## Production
+
+When you push your PWA to production there are a few things to keep in mind.
+
+TIPS: 1) You need to change the APP 'start_url' in the manifest. This is because it is local /index.html when in development, but will need to be a different path on your production (if host app off of main page). The change looks like this:
+
+<code>
+  //change the local dev path to...
+  "scope": "/",
+  "start_url": "/index.html?source=pwa",
+
+  //the production server path
+  "scope": "/DEMOPWA1/public/",
+  "start_url": "/DEMOPWA1/public/index.html?source=pwa",
+</code>
+
+2) Also you will find two sets of paths in the sw.js Service Worker for the same reason. The goal for separating dev paths from production paths has an added advantage that multiple apps can be hosted from one website! 
+
+
+
 ## Examples over on anmscape.com
 
 Hosted by heroku:
-- AppShellTempl8 : free MIT
-- BOXiGON : play free!
-- Surfmoon : Technical DEMO
+- [AppShellTemplate](https://www.anmscape.com/AppShellTemplate/public/index.html) : FREE MIT Demo.
+- [BOXiGON](https://www.anmscape.com/FreeBOXiGON/app/) : play for FREE!
+- [Surfmoon](https://www.anmscape.com/FreeSpace/epic1/) : Technical DEMO
 
 
 
@@ -179,9 +199,7 @@ NOTE: integration for LeadBolt ADS, as interstitial, "Brought to you by" overlay
 
 ## Contact (DM)
 
-boxigon
-anmscape
-afalcon
+[afalcon](https://twitter.com/alpinefalcon)
 
 
 
