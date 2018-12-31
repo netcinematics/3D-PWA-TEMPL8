@@ -19,10 +19,11 @@
     <link rel="icon" type="image/png" href="img/logos/logo1_144x144.png">
     <!-- ***************************************-LIBS-**************************************** -->
     <link rel="stylesheet" type="text/css" href="./lib/materialize/materialize.css">
-    <script type="text/javascript" src="./lib/jquery/jquery-3.3.1.js"></script>
-    <script type="text/javascript" src="./lib/babylon/hand.min-1.2.js"></script>
-    <script type="text/javascript" src="./lib/babylon/babylon.3.0.0-alpha.max.js"></script> 
-    <script type="text/javascript" src="./lib/babylon/materials/babylon.gridMaterial.min.js"></script> 
+<!--     <script async type="text/javascript" src="./lib/jquery/jquery-3.3.1.js"></script>
+    <script async type="text/javascript" src="./lib/babylon/hand.min-1.2.js"></script>
+    <script type="text/javascript" src="./lib/babylon/babylon.3.0.min.js" ></script> 
+    <script type="text/javascript" src="./lib/babylon/materials/babylon.gridMaterial.min.js"></script>  -->
+    <!-- <script type="text/javascript" src="./lib/babylon/babylon.3.0.0-alpha.max.js"></script>  -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/babylonjs/3.0.0-alpha/babylon.max.js"></script> -->
     <!-- <script src="https://raw.githubusercontent.com/BabylonJS/Babylon.js/master/dist/materialsLibrary/babylon.gridMaterial.js"></script>  -->
     <style>
@@ -32,6 +33,7 @@
             height  : 100%;
             margin  : 0;
             padding : 0;
+            background-color:#000;
         }
         #renderCanvas {
             width   : 100%;
@@ -40,6 +42,11 @@
         }
     </style>
     <style> /*----------------------------------------------------------Mobile-FIRST-RWD--*/
+        @media only screen and (max-width: 350px) { /*mobile styles*/
+           #mainTitle {
+               font-size:1.0rem;
+           }
+        }
         @media only screen and (min-width: 350px) { /*mobile styles*/
            #mainTitle {
                font-size:1.2rem;
@@ -58,7 +65,7 @@
     </style>
   </head>
   <body>
-    <script>
+    <script async type="text/javascript">
         /*****************-NET-CINEMATICS-*******************/
         let nx = {};
         nx.sonic={};
@@ -72,9 +79,11 @@
     </nav>
     <!--********************************-APP-INSTALL-COMPONENT-********************************-->
     <aside>
-      <style>.add-button { position: absolute; top: 72px; right: 2px; border-radius: 10px; } </style>
+      <style>
+        .add-button { position: absolute; top: 72px; right: 2px; border-radius: 10px; } 
+    </style>
       <button class="add-button center">Add to home screen</button>
-      <script>//App install banners/Add to Home Screen by Pete LaPage.
+      <script async type="text/javascript">//App install banners/Add to Home Screen by Pete LaPage.
         let deferredPrompt;
         const addBtn = document.querySelector('.add-button');
         addBtn.style.display = 'none'; //hide-initially-.
@@ -98,35 +107,40 @@
       </script>
     </aside>
     <!--***************************-APP-INSTALL-COMPONENT-********************************-->
-    <!--*********************************-LOGO-COMPONENT-********************************-->
+    <!--*********************************-ENGINE-LOGO-COMPONENT-********************************-->
     <aside>
-        <style>.logoStyle{ position: absolute; top: 5px; left: 5px; width: 50px; }</style>
-        <img class="logoStyle" src="./img/logos/logo1_144x144.png"/>
+        <style>.logoTxt{position:absolute;top:0;right:8px;font-size:0.6em;color:silver;}</style>
+        <style>.logoStyle{ position: absolute; top: 10px; right: 8px; width: 44px; }</style>
+        <a href="https://www.babylonjs.com/" target="_blank"><img class="logoStyle" src="./img/logos/logo1_144x144.png"/></a>
+        <a href="https://www.babylonjs.com/" target="_blank"><span class="logoTxt">powered by</span></a>
     </aside>
-    <!--************************************************AUDIO-COMPONENT*******************************-->
+    <!--********************************-ENGINE-LOGO-COMPONENT-********************************-->
+    <!--*************************************AUDIO-COMPONENT*******************************-->
     <aside>
         <style>.sonicBtn { position: absolute; top: 72px; left: 2px; border-radius: 10px; } </style>
         <button class="sonicBtn center">sound off</button>
-        <script>
-            $(".sonicBtn").on({ //todo named function here call nx.ui.routeRemix
-                click: function (e) {
-                    if(nx.sonic.toggle){
-                        nx.sonic.soundObjTrack1.play();
-                        $('.sonicBtn').html('sound on')
-                    } else {
-                        nx.sonic.soundObjTrack1.stop();
-                        $('.sonicBtn').html('sound off')
+        <script async type="text/javascript">
+            window.addEventListener('DOMContentLoaded', function(){
+                $(".sonicBtn").on({ //todo named function here call nx.ui.routeRemix
+                    click: function (e) {
+                        if(nx.sonic.toggle){
+                            nx.sonic.soundObjTrack1.play();
+                            $('.sonicBtn').html('sound on')
+                        } else {
+                            nx.sonic.soundObjTrack1.stop();
+                            $('.sonicBtn').html('sound off')
+                        }
+                        nx.sonic.toggle = !nx.sonic.toggle;
                     }
-                    nx.sonic.toggle = !nx.sonic.toggle;
-                }
+                });
             });
         </script>
     </aside>
-    <!--***********************************************-LOGO-COMPONENT-********************************-->
+    <!--********************************AUDIO-COMPONENT*******************************-->
     <!--*****************************-END-APP-SHELL-************************************-->
     <!--***********************************************-BABYLON-CONTENT-COMPONENT-************************************-->
     <canvas id="renderCanvas"></canvas>
-    <script>
+    <script async type="text/javascript">
         window.addEventListener('DOMContentLoaded', function(){
             var canvas = document.getElementById('renderCanvas');
             var engine = new BABYLON.Engine(canvas, true);
@@ -184,11 +198,11 @@
             var createAssets = function() {
                 var assetsManager = new BABYLON.AssetsManager(scene); 
                 engine.loadingUIText = "Welcome..."; //----ASSETS-MANAGER--------------Loading Indicator
-                assetsManager.addMeshTask("asset2", "", "./3d/assets/", "skull.babylon").onSuccess = function (task){
-                    task.loadedMeshes.forEach(function(e,i){
-                            task.loadedMeshes[0].position = new BABYLON.Vector3(0,30,150);
-                    });
-                };
+                // assetsManager.addMeshTask("asset2", "", "./3d/assets/", "skull.babylon").onSuccess = function (task){
+                //     task.loadedMeshes.forEach(function(e,i){
+                //             task.loadedMeshes[0].position = new BABYLON.Vector3(0,30,150);
+                //     });
+                // };
                 assetsManager.addMeshTask("asset3", "", "./3d/assets/", "worldbox2.babylon").onSuccess = function (task){};
                 assetsManager.onFinish = function(tasks) {
                     engine.runRenderLoop(function() {
@@ -275,11 +289,16 @@
         });
     </script>
 
-    <script type="text/javascript" src="./app.js"></script>
+    <script async type="text/javascript" src="./lib/jquery/jquery-3.3.1.js"></script>
+    <script async type="text/javascript" src="./lib/babylon/hand.min-1.2.js"></script>
+    <script type="text/javascript" src="./lib/babylon/babylon.3.0.min.js" ></script> 
+    <script type="text/javascript" src="./lib/babylon/materials/babylon.gridMaterial.min.js"></script> 
+
+    <script async type="text/javascript" src="./app.js"></script>
 
   </body>
     <!--GoogleAnalytics-->
-    <script>
+    <script async type="text/javascript">
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
