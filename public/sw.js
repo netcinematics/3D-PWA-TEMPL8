@@ -1,15 +1,15 @@
 "use strict";
 
 var filesToCache = [];
-var cacheName = '3d-pwa-templ8';
-var dataCacheName = '3d-pwa-templ8';
+var cacheName = '3d-pwa-appshell-template';
+var dataCacheName = '3d-pwa-appshell-template';
 //DOMAIN-HANDLING-.
 // if(document.URL.match('127.0')){ //localhost // no dom! //TODO - parameterize or find better way to sniff domain -.
 if(true){ //true is run LOCAL CACHE TESTING
 // if(false){ //false is run PROD CACHE
   console.log('[Service Worker] process local cache')
   filesToCache = [
-    // '/',
+    '/',  //avoids console error-.
    // "./img",
    // "./img/logos", <<- dont do this, performance reasons.
    "./img/logos/logo1_128x128.png",       //performance op (compress)
@@ -41,9 +41,9 @@ if(true){ //true is run LOCAL CACHE TESTING
   ];
 } else {
   console.log('[Service Worker] process production cache');
-  var path = "https://your.domain/DEMOPWA1/public";    //different path on production server
+  var path = "https://your.domain/DEMOPWA1/public";    //different path on production server for multiple apps-.
   filesToCache = [
-    // '/',
+    '/',
      path + "/img/logos/logo1_128x128.png",
      path + "/img/logos/logo1_144x144.png",
      path + "/img/logos/logo1_152x152.png",

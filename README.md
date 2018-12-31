@@ -1,6 +1,6 @@
-# 3D-PWA-Appshell-Templ8
+# 3D-PWA-Appshell-Template
 PWA Template with BabylonJS
-# A 3D Progressive Web App Shell Template
+# A 3D Progressive Web Appshell Template
 
 Powered by:
 
@@ -39,7 +39,7 @@ Be sure to check the W3C compatibility tables before going to production. PWA te
 
 ## Run that app
 
-In DevTools, Right Click > and Inspect Elements. Refresh > and check those cached files in the console log! It caches the skybox, 3D assets, audio and the App Shell separately!?! Not to mention the Runtime Database hanging out in LocalStorage. We can render dynamic content and run Offline like a Golden Retriever off leash. After a Click > on that "Add to Homescreen" button (or "Install" under Chrome settings) you get a silky smooth loading screen. How nice. Thank you BabylonJS! And be on look out for other hidden gizmos like: hidden URL, SSL info, and screen orientation support. Zing! Jump back to your desktop/homescreen to find your App! Also, it seems to pops up anywhere native apps do. Thank you Microsoft!
+In DevTools, Right Click > and Inspect Elements. Refresh > and check those cached files in the console log! It caches the skybox, 3D assets, audio and the "App Shell" separately!?! Not to mention the Runtime Database hanging out in LocalStorage. We can render dynamic content and run Offline like a Golden Retriever off leash. After a Click > on that "Add to Homescreen" button (or "Install" under Chrome settings) you get a silky smooth loading screen. How nice. Thank you BabylonJS! And be on look out for other hidden gizmos like: hidden URL, SSL info, and screen orientation support. Zing! Jump back to your desktop/homescreen to find your App! Also, it seems to pops up anywhere native apps do. Thank you Microsoft!
 
 NOTES: To uninstall PWA, Click > Apps button in Chrome. Then Right Click > Remove (also in app header). 
 
@@ -63,7 +63,7 @@ Also, we use separate Cache-paths between Dev and Prod. And look there in that c
 
 ## App Shell (Template)
 
-PWAs have a DESIGN PATTERN called "App Shell" and it is really clever. App Shell separates content from the "Shell" which is the App. <i>Neato?</i> We do that so we can cache shell and content separately. Because this enables <i>episodic content</i> downloads, at an ongoing (progressive) basis while the App Shell sits static, as happy as a clam. Zing! So that is a little bit about this App Shell Template. 
+PWAs have a DESIGN PATTERN called "App Shell" and it is really clever. App Shell separates content from the "Shell", which is the App, and this is done so the cache can be updated separately. <i>Neato?</i> Which enables <i>episodic content</i> downloads on an ongoing (progressive) basis while the App Shell sits static, as happy as a clam. Zing! So that is a little bit about this App Shell Template. 
 
 Later, we look at how to extend the "Content Stream" with LocalStorage in beautiful JSON medium, and how to Push Notify version updates to reload the App Shell - in successive gits to keep this one small.
 
