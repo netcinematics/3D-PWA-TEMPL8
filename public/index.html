@@ -77,22 +77,20 @@
         <a id="mainTitle" href="#" class="brand-logo center">3D-PWA-TEMPL8!</a>
       </div>
     </nav>
-    <!--********************************-APP-INSTALL-COMPONENT-********************************-->
+    <!--********************************-HOMESCREEN-COMPONENT-********************************-->
     <aside>
-      <style>
-        .add-button { position: absolute; top: 72px; right: 2px; border-radius: 10px; } 
-    </style>
-      <button class="add-button center">Add to home screen</button>
+      <style>.add-button { position: absolute; top: 72px; right: 2px; border-radius: 10px; } </style>
+      <button class="add-button center">Add to Homescreen</button>
       <script async type="text/javascript">//App install banners/Add to Home Screen by Pete LaPage.
-        let deferredPrompt;
+        let deferredPrompt; //https://developers.google.com/web/fundamentals/app-install-banners/
         const addBtn = document.querySelector('.add-button');
-        addBtn.style.display = 'none'; //hide-initially-.
+        addBtn.style.display = 'none'; //hide-A2HS-initially-.
         window.addEventListener('beforeinstallprompt', (e) => {
           e.preventDefault(); // Prevent Chrome 67 and earlier from automatically showing the prompt
           deferredPrompt = e; // Stash the event so it can be triggered later.
           addBtn.style.display = 'block';  // Update UI to notify the user they can add to home screen
           addBtn.addEventListener('click', (e) => {
-            addBtn.style.display = 'none';// hide our user interface that shows our A2HS button
+            addBtn.style.display = 'none';// hide our ui A2HS button
             deferredPrompt.prompt(); // Show the prompt
             deferredPrompt.userChoice.then((choiceResult) => { // Wait for the user to respond to the prompt
                 if (choiceResult.outcome === 'accepted') {
@@ -106,7 +104,7 @@
         });
       </script>
     </aside>
-    <!--***************************-APP-INSTALL-COMPONENT-********************************-->
+    <!--***************************-HOMESCREEN-COMPONENT-********************************-->
     <!--*********************************-ENGINE-LOGO-COMPONENT-********************************-->
     <aside>
         <style>.logoTxt{position:absolute;top:0;right:8px;font-size:0.6em;color:silver;}</style>

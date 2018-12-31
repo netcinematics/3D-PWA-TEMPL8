@@ -4,7 +4,7 @@ var filesToCache = [];
 var cacheName = '3d-pwa-templ8';
 var dataCacheName = '3d-pwa-templ8';
 //DOMAIN-HANDLING-.
-// if(document.URL.match('127.0')){ //localhost // no dom! //TODO - parameterize-.
+// if(document.URL.match('127.0')){ //localhost // no dom! //TODO - parameterize or find better way to sniff domain -.
 if(true){ //true is run LOCAL CACHE TESTING
 // if(false){ //false is run PROD CACHE
   console.log('[Service Worker] process local cache')
@@ -27,7 +27,7 @@ if(true){ //true is run LOCAL CACHE TESTING
    // "./lib/babylon/babylon.3.0.0-alpha.max.js", //performance op (min)
    "./lib/babylon/babylon.3.0.min.js",
    "./lib/babylon/hand.min-1.2.js",
-   "./3d/assets/skull.babylon",          //performance op (delay load?)
+   // "./3d/assets/skull.babylon",          //performance op (delay load?)
    "./3d/assets/worldbox2.babylon",
    "./sonic/nxBoomCore2cc0.mp3",         //performance op (delay load?)
    "./sonic/nxBlip2b.mp3",
@@ -61,7 +61,7 @@ if(true){ //true is run LOCAL CACHE TESTING
      // path + "/lib/babylon/babylon.3.0.0-alpha.max.js",
      path + "/lib/babylon/babylon.3.0.min.js",
      path + "/lib/babylon/hand.min-1.2.js",
-     path + "/3d/assets/skull.babylon",
+     // path + "/3d/assets/skull.babylon",
      path + "/3d/assets/worldbox2.babylon",
      path + "/sonic/nxBoomCore2cc0.mp3",
      path + "/sonic/nxBlip2b.mp3",
