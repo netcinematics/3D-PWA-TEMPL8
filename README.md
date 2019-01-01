@@ -96,7 +96,7 @@ NOTE:
 If you need a [<i>custom</i> "Add to Homescreen"](https://paul.kinlan.me/new-in-chrome-68webgoogle-developers/) button for your PWA, check out the vanilla-component in the index above. It is a "components" made with pure HTML, CSS, and JavaScript. [Many doors open here](https://developer.mozilla.org/en-US/docs/Web/Apps/Progressive/Installable_PWAs). Thank you Mozilla! 
 
 TIP: Another great resource for [PWA "A2HS"](https://developers.google.com/web/fundamentals/app-install-banners/). 
-
+</pre>
 
 
 ## Structure
