@@ -6,7 +6,10 @@ Powered by:
 
 [<img src="curio/logo1.png" width="200" border="3" style="border-radius: 10px;">](https://www.babylonjs.com/)
 
-Progressive Web Applications are the next big innovation for the world wide web for creative HTML5 App developers. The technology takes any Web Page and allows it to be saved to a users "Homescreen" for easy access anytime. Now with BabylonJS, we can take our 3D skills to the "Home screen" with no app store necessary. Use this template to begin distributing 3D PWA's from your SSL Website. 
+Progressive Web Applications are the next big innovation for the world wide web for creative HTML5 App developers. The technology takes any Web Page and allows it to be saved to a users "Homescreen" for easy access anytime. Now with BabylonJS, take your 3D skills to the "Home screen" with no app store necessary. Use this template to gost 3D PWA's from your SSL Website. 
+
+## Example
+- [AppShellTemplate](https://www.anmscape.com/AppShellTemplate/public/index.html) : FREE MIT Demo.
 
 
 ## WARNING
@@ -15,7 +18,7 @@ Be sure to check the W3C compatibility tables before going to production. PWA te
 
 
 
-## Create your own 3D Web App (why not?)
+## Create your own 3D Web App 
 
 1) Clone me - free as MIT! And look, PWA is <i>easier</i> than App Stores.
 
@@ -37,7 +40,7 @@ Be sure to check the W3C compatibility tables before going to production. PWA te
 
 
 
-## Going under the hood
+## Under the hood
 
 In DevTools, Right Click > and Inspect Elements. Refresh > and check those cached files in the console log. It caches the skybox, 3D assets, audio and the "App Shell"! Not to mention the LocalStorage Runtime Database. We can render any cached content offline. And when we install, there is a smooth loading screen. Thank you BabylonJS! But don't forget the other gizmos like: hidden URL, SSL info, and screen orientation support. Jump back to your desktop/homescreen to find your App! Windows 10 installs the app link to the desktop and that is rad.Thank you Microsoft!
 
@@ -162,14 +165,6 @@ TIPS: When you push your PWA to production there are a few things to keep in min
 
 2) The 'start_url' allows multiple apps can be hosted from the same site! 
 </pre>
-
-
-## Examples on anmscape.com
-
-Hosted by heroku:
-- [AppShellTemplate](https://www.anmscape.com/AppShellTemplate/public/index.html) : FREE MIT Demo.
-- [BOXiGON](https://www.anmscape.com/FreeBOXiGON/app/) : play for FREE!
-- [Surfmoon](https://www.anmscape.com/FreeSpace/epic1/) : Technical DEMO
 
 
 
