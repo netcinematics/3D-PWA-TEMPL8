@@ -22,7 +22,7 @@ Be sure to check the W3C compatibility tables before going to production. PWA te
 
 1) Clone me - free as MIT! And look, PWA is <i>easier</i> than App Stores.
 
-2) Set up [Web Server for Chrome](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/#install_and_verify_web_server)), (details below).
+2) Set up [Web Server for Chrome](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/#install_and_verify_web_server), (details below).
 
 3) Flip > that "Start Server" button. Click > the blue Localhost link, and the Web App pops up in your browser.
 
@@ -42,7 +42,7 @@ Be sure to check the W3C compatibility tables before going to production. PWA te
 
 ## Under the hood
 
-In DevTools, Right Click > and Inspect Elements. Refresh > and check those cached files in the console log. It caches the skybox, 3D assets, audio and the "App Shell"! Not to mention the LocalStorage Runtime Database. We can render any cached content offline. And when we install, there is a smooth loading screen. Thank you BabylonJS! But don't forget the other gizmos like: hidden URL, SSL info, and screen orientation support. Jump back to your desktop/homescreen to find your App! Windows 10 installs the app link to the desktop and that is rad.Thank you Microsoft!
+In DevTools, Right Click > and Inspect Elements. Refresh > and check those cached files in the console log. It caches the skybox, 3D assets, audio and the "App Shell"! Not to mention the LocalStorage Runtime Database. We can render any cached content offline. And when we install, there is a smooth loading screen. Thank you BabylonJS! But don't forget the other gizmos like: hidden URL, SSL info, and screen orientation support. Jump back to your desktop/homescreen to find your App! Windows 10 installs the app link to the desktop and that is rad.
 
 <pre>
 NOTES: 
@@ -50,17 +50,15 @@ NOTES:
 2) Then Right Click > Remove (also in app header). 
 </pre>
 
-PWAs are multi-dimensional. Welcome to the world-wild-web! 
-
 
 
 ## Chrome Web Server
 
-The Chrome Web Server is awesome and it is finally a simple Dev Server that is quick, reliable, and unobstrusive. Thanks Google. 
+The Chrome Web Server is awesome and it is finally a quick, reliable, and unobstrusive dev server.
 
 <pre>
 TIPS: 
-1) point to 'public' folder or all your cache-paths go 404!
+1) point to 'public' folder or all your cache-paths go 404.
 2) separate cache-paths between Dev and Prod. And look for console messaging to see <i>what is happening</i>. 
 </pre>
 
@@ -71,13 +69,13 @@ TIPS:
 
 ## App Shell (Template)
 
-PWAs have a DESIGN PATTERN called "App Shell" and it is really clever. It separates content from the app, which is the shell, so that cache can update each separately. Which allows for <i>episodic content</i> updated in an ongoing basis while the App Shell can remain static. Later, we look at how to extend the "Content Stream" with LocalStorage in beautiful JSON medium.
+PWAs have a DESIGN PATTERN called "App Shell" and it is really clever. It separates content from the app (shell), so that each cache can be updated separately. This allows for an  <i>episodic </i> "Content Stream" to be updated in an ongoing basis, while the App Shell can remain static. 
 
 
 
 ## Service Workers
 
-Service Workers appear [widely supported across browsers](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker#Browser_compatibility). At time of writing it says, <i>"This is experimental technology"</i> <- gotta love that!
+Service Workers appear [widely supported across browsers](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker#Browser_compatibility). At time of writing it says, <i>"This is experimental technology"</i>. Great!
 
 <pre>
 TIPS: 
@@ -87,16 +85,21 @@ TIPS:
 </pre>
 
 
+
 ## "Add to Homescreen" (Web App Manifest)
 
 "Homescreen" is the COOL new ability brought to you by the "Web App Manifest". Thank you [W3C](https://www.w3.org/TR/appmanifest/)! 
 
 <pre>
 NOTE: 
-If you need a [<i>custom</i> "Add to Homescreen"](https://paul.kinlan.me/new-in-chrome-68webgoogle-developers/) button for your PWA, check out the vanilla-component in the index above. It is a "components" made with pure HTML, CSS, and JavaScript. [Many doors open here](https://developer.mozilla.org/en-US/docs/Web/Apps/Progressive/Installable_PWAs). Thank you Mozilla! 
-
-TIP: Another great resource for [PWA "A2HS"](https://developers.google.com/web/fundamentals/app-install-banners/). 
+If you need a <i>custom</i> "Add to Homescreen" button for your PWA, check out the vanilla-component in the index above. It is a "component" made with pure HTML, CSS, and JavaScript. 
 </pre>
+
+LINKS to a few great resources:
+[PWA - "A2HS"](https://developers.google.com/web/fundamentals/app-install-banners/)
+[PWA - custom button](](https://paul.kinlan.me/new-in-chrome-68webgoogle-developers/) 
+[PWA - tutorial](https://developer.mozilla.org/en-US/docs/Web/Apps/Progressive/Installable_PWAs). 
+
 
 
 ## Structure
@@ -133,9 +136,11 @@ TIP: Another great resource for [PWA "A2HS"](https://developers.google.com/web/f
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) is a tool for scoring PWA capabilities. Run it in DevTools > Audit tab. Performance optimization were made to this template after using Lighthouse, and more are needed, so please PR!
 
-The best optimization left is outside of the template: GZIP your server. 2) Also be sure to Click > DevTools > Performance > 'backwards looking refresh icon'. Because it refreshes and profiles the PWA. <i>Including Animations?</i> And if we look closely into that sequence of strata, we can find the layers that can be optimized, which is a gib help with Lighthouse. That is why we added a skull! We use it to emulate complex matrix integrations. Thank you DK. 
+The best optimization left is outside of the template: GZIP your server. 2) Also be sure to Click > DevTools > Performance > 'backwards looking refresh icon'. Because it refreshes and profiles the PWA. <i>Including Animations?</i> And if we look closely into that sequence of stratified data, we can find the layers that can be optimized and help with Lighthouse. And that is why we added a skull! Use it to emulate complex matrix integrations. Thank you DK. 
 
-NOTE: we still want to innovate lazy-loading 3D mesh loading. We think we can do this by sequentially by building scenes up from cache, over and over. It is next on the list!
+<pre>
+STATUS: we still want to lazy-loading 3D mesh loading with scenes that rerender with new meshes. We will see.
+</pre>  
 
 <img src="curio/curio6.png" width="80%" border="3" style="border-radius: 10px;">
 
@@ -153,13 +158,13 @@ NOTE: we still want to innovate lazy-loading 3D mesh loading. We think we can do
 
 <pre>
 TIPS: When you push your PWA to production there are a few things to keep in mind.
-1) You need to change the APP 'start_url' in the manifest. Because in dev it is local /index.html but in prod, it is the subfolder off of main page. The change looks like this:
+1) You need to change the APP 'start_url' in the manifest. 
+Because in dev it is local /index.html but in prod, it is the subfolder off of main page. 
 
-  //change the local dev path to...
+The change looks like this:
   "scope": "/",
   "start_url": "/index.html?source=pwa",
-
-  //the production server path
+  //change to production server path
   "scope": "/DEMOPWA1/public/",
   "start_url": "/DEMOPWA1/public/index.html?source=pwa",
 
@@ -200,5 +205,5 @@ STATUS: working on itch.io docs and support to integrate [many](https://itch.io/
 
 ## 3D-PWA-AppShell-Template?
 
-All in! :) 
+<i>All in! :) </i>
 
