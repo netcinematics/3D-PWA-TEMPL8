@@ -6,15 +6,15 @@ Powered by:
 
 [<img src="curio/logo1.png" width="200" border="3" style="border-radius: 10px;">](https://www.babylonjs.com/)
 
-Progressive Web Applications are the next big innovation for the world wide web for creative HTML5 App developers. The technology takes any Web Page and allows it to be saved to a users "Homescreen" for easy access anytime. Now with BabylonJS, take your 3D skills to the "Home screen" with no app store necessary. Use this template to gost 3D PWA's from your SSL Website. 
+Progressive Web Applications are the next big thing for the world wide web and creative HTML5 App developers. The technology takes any Web Page and allows it to save offline to a users "Homescreen" for easy access anytime! Now with BabylonJS take your 3D skills to the "Home screen" with no app store necessary. and use this template to host 3D PWA's from any SSL Website. 
 
 ## Example
-- [AppShellTemplate](https://www.anmscape.com/AppShellTemplate/public/index.html) : FREE MIT Demo.
+- [AppShellTemplate Demo](https://www.anmscape.com/AppShellTemplate/public/index.html).
 
 
 ## WARNING
 
-Be sure to check the W3C compatibility tables before going to production. PWA technology is a "Progressive Enhancement" (meaning it is a vanilla web site), and it is all subject to change. So it is best to watch for browser support for the [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest#Browser_compatibility) in particular. It is not as well supported as the [Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API#Specifications). So we watch [caniuse Service Workers](https://caniuse.com/#feat=serviceworkers) and [caniuse Web App Manifest](https://caniuse.com/#feat=web-app-manifest) to follow the progress of the world-wild-web.
+Be sure to check the W3C compatibility tables before going to production. PWA technology is a "Progressive Enhancement" (meaning it is a vanilla web site underneath) and it is all subject to change. So it's best to watch for browser support for things like the [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest#Browser_compatibility) and [Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API#Specifications). Also [caniuse Service Workers](https://caniuse.com/#feat=serviceworkers) and [caniuse Web App Manifest](https://caniuse.com/#feat=web-app-manifest).
 
 
 
