@@ -14,7 +14,7 @@ Progressive Web Applications are the next big thing for the world wide web and H
 
 ## WARNING
 
-Be sure to check the W3C compatibility tables before going to production. PWA technology is a "Progressive Enhancement" (meaning it is a vanilla web site underneath) and it is all subject to change. So it's best to watch for browser support for things like the [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest#Browser_compatibility) and [Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API#Specifications). Also [caniuse Service Workers](https://caniuse.com/#feat=serviceworkers) and [caniuse Web App Manifest](https://caniuse.com/#feat=web-app-manifest).
+Be sure to check the W3C compatibility before going to production. PWA technology is a "Progressive Enhancement" (meaning it is a vanilla web site underneath) and it is all subject to change. So it's best to watch for browser support for things like the [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest#Browser_compatibility) and [Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API#Specifications). Also [caniuse Service Workers](https://caniuse.com/#feat=serviceworkers) and [caniuse Web App Manifest](https://caniuse.com/#feat=web-app-manifest).
 
 
 
@@ -40,7 +40,7 @@ Be sure to check the W3C compatibility tables before going to production. PWA te
 
 ## Under the hood
 
-In DevTools, Right Click > and Inspect Elements. Refresh > and check those cached files in the console log. It caches the skybox, 3D assets, audio and the "App Shell"! Not to mention the LocalStorage Runtime Database. We can render any cached content offline. And when we install, there is a smooth loading screen. Thank you BabylonJS! But don't forget the other gizmos like: hidden URL, SSL info, and screen orientation support. Jump back to your desktop/homescreen to find your App! Windows 10 installs the app link to the desktop and that is rad.
+In DevTools, Right Click > and Inspect Elements. Refresh > and check those cached files in the console log. It caches the skybox, 3D assets, audio and the "App Shell"! Not to mention the LocalStorage Runtime Database. We can render any cached content offline. And when we install, there is a smooth loading screen. Thank you BabylonJS! But don't forget the other gizmos like: hidden URL, SSL info, and screen orientation support. Jump back to your desktop/homescreen to find your App! Windows 10 installs the app link to the desktop, and we think that is a gamechanger for our 3D Apps business model.
 
 <pre>
 NOTES: 
@@ -96,7 +96,7 @@ NOTE:
 
 LINKS to great resources on Homescreen capabilities:
 - [PWA - "A2HS"](https://developers.google.com/web/fundamentals/app-install-banners/)
-- [PWA - custom button]((https://paul.kinlan.me/new-in-chrome-68webgoogle-developers/) 
+- [PWA - custom button](https://paul.kinlan.me/new-in-chrome-68webgoogle-developers/) 
 - [PWA - tutorial](https://developer.mozilla.org/en-US/docs/Web/Apps/Progressive/Installable_PWAs). 
 
 
