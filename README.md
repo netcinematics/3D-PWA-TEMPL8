@@ -6,7 +6,7 @@ Powered by:
 
 [<img src="curio/logo1.png" width="200" border="3" style="border-radius: 10px;">](https://www.babylonjs.com/)
 
-Progressive Web Applications are the next big thing for the world wide web and creative HTML5 App developers. The technology takes any Web Page and allows it to save offline to a users "Homescreen" for easy access anytime! Now with BabylonJS take your 3D skills to the "Home screen" with no app store necessary. and use this template to host 3D PWA's from any SSL Website. 
+Progressive Web Applications are the next big thing for the world wide web and HTML5 App developers. The concept is to take any Web Page and save it offline to a users "Homescreen" for easy access anytime! We think this is an excellent fit for BabylonJS and for distributing creative content. Because for the first time, we can take our 3D skills to the "Home screen" with no app store necessary. Use this template as an example of how to serve 3D PWA's from any SSL Website. 
 
 ## Example
 - [AppShellTemplate Demo](https://www.anmscape.com/AppShellTemplate/public/index.html).
@@ -20,7 +20,7 @@ Be sure to check the W3C compatibility tables before going to production. PWA te
 
 ## Create your own 3D Web App 
 
-1) Clone me - free as MIT! And look, PWA is <i>easier</i> than App Stores.
+1) Clone me.
 
 2) Set up [Web Server for Chrome](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/#install_and_verify_web_server), (details below).
 
@@ -46,8 +46,8 @@ In DevTools, Right Click > and Inspect Elements. Refresh > and check those cache
 
 <pre>
 NOTES: 
-1) To uninstall PWA, Click > Apps button in Chrome.
-2) Then Right Click > Remove (also in app header). 
+- To uninstall PWA, Click > Apps button in Chrome.
+- Then Right Click > Remove (also in app header). 
 </pre>
 
 
@@ -58,8 +58,8 @@ The Chrome Web Server is awesome and it is finally a quick, reliable, and unobst
 
 <pre>
 TIPS: 
-1) point to 'public' folder or all your cache-paths go 404.
-2) separate cache-paths between Dev and Prod. And look for console messaging to see <i>what is happening</i>. 
+- point to 'public' folder or all your cache-paths go 404.
+- separate cache-paths between Dev and Prod. And look for console messaging to see <i>what is happening</i>. 
 </pre>
 
 
@@ -69,7 +69,7 @@ TIPS:
 
 ## App Shell (Template)
 
-PWAs have a DESIGN PATTERN called "App Shell" and it is really clever. It separates content from the app (shell), so that each cache can be updated separately. This allows for an  <i>episodic </i> "Content Stream" to be updated in an ongoing basis, while the App Shell can remain static. 
+PWAs have a DESIGN PATTERN called "App Shell" and it is really clever. It separates content from the app (shell), so that each cache can be updated separately. This allows for an  <i>episodic </i> "Content Stream" to be updated in an ongoing basis, while the App Shell remains static. 
 
 
 
@@ -79,9 +79,9 @@ Service Workers appear [widely supported across browsers](https://developer.mozi
 
 <pre>
 TIPS: 
-1) look under DevTools > Application tab for help on Service Workers and Manifest.
-2) Also the > Network tab is really good for the "Clear Site Data" button, and "Update on reload." 
-3) Under > Network > there is 'Offline' Mode to watch it load from cache.
+- look under DevTools > Application tab for help on Service Workers and Manifest.
+- Also the > Network tab is really good for the "Clear Site Data" button, and "Update on reload." 
+- Under > Network > there is 'Offline' Mode to watch it load from cache.
 </pre>
 
 
@@ -139,7 +139,7 @@ LINKS to a few great resources:
 The best optimization left is outside of the template: GZIP your server. 2) Also be sure to Click > DevTools > Performance > 'backwards looking refresh icon'. Because it refreshes and profiles the PWA. <i>Including Animations?</i> And if we look closely into that sequence of stratified data, we can find the layers that can be optimized and help with Lighthouse. And that is why we added a skull! Use it to emulate complex matrix integrations. Thank you DK. 
 
 <pre>
-STATUS: we still want to lazy-loading 3D mesh loading with scenes that rerender with new meshes. We will see.
+STATUS: we still look to lazy-load 3D mesh with scenes that re-render with new meshes. Sequenced-scenes make sense with Service Workers.
 </pre>  
 
 <img src="curio/curio6.png" width="80%" border="3" style="border-radius: 10px;">
@@ -158,7 +158,7 @@ STATUS: we still want to lazy-loading 3D mesh loading with scenes that rerender 
 
 <pre>
 TIPS: When you push your PWA to production there are a few things to keep in mind.
-1) You need to change the APP 'start_url' in the manifest. 
+- You need to change the APP 'start_url' in the manifest. 
 Because in dev it is local /index.html but in prod, it is the subfolder off of main page. 
 
 The change looks like this:
@@ -168,7 +168,7 @@ The change looks like this:
   "scope": "/DEMOPWA1/public/",
   "start_url": "/DEMOPWA1/public/index.html?source=pwa",
 
-2) The 'start_url' allows multiple apps can be hosted from the same site! 
+- The 'start_url' allows multiple apps can be hosted from the same site! 
 </pre>
 
 
@@ -188,7 +188,7 @@ The change looks like this:
 
 ## PWA Paywall?
 
-Check out [itch.io](https://itch.io/docs/creators/html5) and [LeadBolt](https://www.leadbolt.com/) first. They are good.
+Check out [itch.io](https://itch.io/docs/creators/html5) and [LeadBolt](https://www.leadbolt.com/). They are good.
 
 STATUS: working on itch.io docs and support to integrate [many](https://itch.io/developers) [options](https://itch.io/docs/api/overview) like [embeds](https://itch.io/docs/creators/widget) or [JWT with Node](https://itch.io/docs/api/serverside)? For paywall or subscriptions or interstitial or etc. 
 
