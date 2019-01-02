@@ -40,7 +40,7 @@ Be sure to check the W3C compatibility before going to production. PWA technolog
 
 ## Under the hood
 
-In DevTools, Right Click > and Inspect Elements. Refresh > and check those cached files in the console log. It caches the skybox, 3D assets, audio and the "App Shell"! Not to mention the LocalStorage Runtime Database. We can render any cached content offline. And when we install, there is a smooth loading screen. Thank you BabylonJS! But don't forget the other gizmos like: hidden URL, SSL info, and screen orientation support. Jump back to your desktop/homescreen to find your App! Windows 10 installs the app link to the desktop, and we think that is a gamechanger for our 3D Apps business model.
+In DevTools, Right Click > and Inspect Elements. Refresh > and check those cached files in the console log. It caches the skybox, 3D assets, audio and the "App Shell"! Not to mention the LocalStorage Runtime Database. We can render any cached content offline. And when we install, there is a smooth loading screen. Thank you BabylonJS! But don't forget the other gizmos like: hidden URL, SSL info, and screen orientation support. Jump back to your desktop/homescreen to find your App! Windows 10 installs the app link to the desktop, and we think that is a game changer for our 3D Apps business model.
 
 <pre>
 NOTES: 
@@ -90,7 +90,7 @@ TIPS:
 
 <pre>
 NOTE: 
-- If you need a <i>custom</i> "Add to Homescreen" button for your PWA, check out the vanilla-component in the index above. 
+- If you need a <i>custom</i> "Add to Homescreen" button for your PWA, check out the vanilla-component in the index. 
 - It is a "component" made with pure HTML, CSS, and JavaScript. 
 </pre>
 
@@ -189,7 +189,7 @@ The change looks like this:
 
 Check out [itch.io](https://itch.io/docs/creators/html5) and [LeadBolt](https://www.leadbolt.com/). They are good.
 
-STATUS: working on itch.io docs and support to integrate [many](https://itch.io/developers) [options](https://itch.io/docs/api/overview) like [embeds](https://itch.io/docs/creators/widget) or [JWT with Node](https://itch.io/docs/api/serverside)? For paywall or subscriptions or interstitial or etc. 
+STATUS: working on itch.io docs and support to integrate [many](https://itch.io/developers) [options](https://itch.io/docs/api/overview) like [embeds](https://itch.io/docs/creators/widget) or [JWT with Node](https://itch.io/docs/api/serverside)? For paywall or subscriptions or interstitial, etc. Overall, we are looking for PWA to integrate with subscription systems or one-time payments systems.
 
 
 <i>Welcome to the world-wild-web</i>.
