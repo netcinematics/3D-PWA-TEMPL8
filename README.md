@@ -28,15 +28,13 @@ Be sure to check the W3C compatibility tables before going to production. PWA te
 
 4) Then "Install" it with a Tap > using the (custom) "Add to Homescreen" button.
 
-5) And your Progressive Web App is refreshed in NATIVE CONTEXT and saved to the "Homescreen". <i>Isn't it great?</i> 
+5) And your Progressive Web App is refreshed in NATIVE CONTEXT and saved to the "Homescreen".
 
 <img src="curio/curio2.png" width="350" border="3" style="border-radius: 10px;">
 
 - [6) Use BabylonJS to add your own creations](https://doc.babylonjs.com/).
 
 <img src="curio/curio5.png" width="350" border="3" style="border-radius: 10px;">
-
-<i>Wasn't that easy?</i>
 
 
 
@@ -92,13 +90,14 @@ TIPS:
 
 <pre>
 NOTE: 
-If you need a <i>custom</i> "Add to Homescreen" button for your PWA, check out the vanilla-component in the index above. It is a "component" made with pure HTML, CSS, and JavaScript. 
+- If you need a <i>custom</i> "Add to Homescreen" button for your PWA, check out the vanilla-component in the index above. 
+- It is a "component" made with pure HTML, CSS, and JavaScript. 
 </pre>
 
-LINKS to a few great resources:
-[PWA - "A2HS"](https://developers.google.com/web/fundamentals/app-install-banners/)
-[PWA - custom button](](https://paul.kinlan.me/new-in-chrome-68webgoogle-developers/) 
-[PWA - tutorial](https://developer.mozilla.org/en-US/docs/Web/Apps/Progressive/Installable_PWAs). 
+LINKS to great resources on Homescreen capabilities:
+- [PWA - "A2HS"](https://developers.google.com/web/fundamentals/app-install-banners/)
+- [PWA - custom button]((https://paul.kinlan.me/new-in-chrome-68webgoogle-developers/) 
+- [PWA - tutorial](https://developer.mozilla.org/en-US/docs/Web/Apps/Progressive/Installable_PWAs). 
 
 
 
