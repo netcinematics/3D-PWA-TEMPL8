@@ -11,7 +11,7 @@ Progressive Web Applications are the next big thing for the world wide web and H
 ## PWA AppShell Template Examples
 - [AppShellTemplate Demo](https://www.anmscape.com/AppShellTemplate/public/index.html).
 - [BOXiGON! FREE VERSION](https://www.anmscape.com/boxigonpwa1/app/index.html).
-<img src="curio/boxigonPWA1.png" width="150" border="3" style="border-radius: 10px;">
+<img src="curio/boxigonPWA1.png" width="200" border="3" style="border-radius: 10px;">
 
 
 ## WARNING
