@@ -8,8 +8,10 @@ Powered by:
 
 Progressive Web Applications are the next big thing for the world wide web and HTML5 App developers. The concept is to take any Web Page and save it offline to a users "Homescreen" for easy access anytime! We think this is an excellent fit for BabylonJS and for distributing creative content. Because for the first time, we can take our 3D skills to the "Home screen" with no app store necessary. Use this template as an example of how to serve 3D PWA's from any SSL Website. 
 
-## Example
+## PWA AppShell Template Examples
 - [AppShellTemplate Demo](https://www.anmscape.com/AppShellTemplate/public/index.html).
+- [BOXiGON! FREE VERSION](https://www.anmscape.com/boxigonpwa1/app/index.html).
+<img src="curio/boxigonPWA1.png" width="150" border="3" style="border-radius: 10px;">
 
 
 ## WARNING
